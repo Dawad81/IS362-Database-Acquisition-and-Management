@@ -45,7 +45,7 @@ GROUP BY p.manufacturer;
 
 /*4. Write and answer at least one question of your own choosing that joins information from at 
 least three of the tables in the flights database.*/
--- What is the avreage delay by at 3 NYC Airports by manufacturer?
+-- What is the avreage delay for flights at 3 NYC Airports by manufacturer?
 SELECT a.name, CONCAT(f.year,'/', f.month, '/', f.day) AS 'Date',
 IF(f.tailnum = '', 'Unkown Aircraft', f.tailnum) as 'Aircraft' ,
 IF(p.manufacturer = '', 'Unknown Manufacturer', p.manufacturer) as 'Manufacturer',
