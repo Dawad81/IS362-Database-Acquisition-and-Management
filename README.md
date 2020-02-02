@@ -1,2 +1,2 @@
 # IS362-Database-Acquisition-and-Management
-This repository holds all assighnments for IS 362
+This repository holds all assignments for IS 362
