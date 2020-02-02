@@ -57,3 +57,6 @@ LEFT JOIN airports a
 ON f.origin = a.faa
 GROUP BY a.name, f.tailnum , p.manufacturer, f.year, f.month, f.day
 ORDER BY a.name, f.year, f.month, f.day;
+
+-- Link to Tableau workbook representing this data 
+-- https://public.tableau.com/views/IS361Assignment1/Dashboard1?:display_count=y&publish=yes&:origin=viz_share_link
