@@ -1,0 +1,11 @@
+﻿Airline,Airport,OnTime,Delayed
+Alaska,Los Angeles,497,62
+Alaska,Phoenix,221,12
+Alaska,San Diego,212,20
+Alaska,San Francisco,503,102
+Alaska,Seattle,1841,305
+AM West,Los Angeles,694,117
+AM West,Phoenix,4840,415
+AM West,San Diego,383,65
+AM West,San Francisco,320,129
+AM West,Seattle,201,61
