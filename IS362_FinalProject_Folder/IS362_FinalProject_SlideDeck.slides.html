@@ -13250,7 +13250,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With covid 19 being an all consuming topic currently I think it very relevent to gather and exsamine the data on the topic for my final project. I hope to show the diffrence between what New York State, and City are going through, versus the rest of the United States. Additionaly, I hope to exsam the data and report on who is most effected by the virus, what locations are more severly effected. This is much of the same data exsamaniation being done currently to help state and local goverments decide how and where to combat the virus.</p>
+<p>With COVID-19 being an all-consuming topic currently I think it very relevant to gather and examine the data on the topic for my final project. I hope to show the difference between what New York State, and City are going through, versus the rest of the United States. Additionally, I hope to examine the data and report on who is most effected by the virus, what locations are more severely effected. This is much of the same data examination being done currently to help state and local governments decide how and where to combat the virus.</p>
 
 </div>
 </div>
@@ -13259,14 +13259,14 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>First we must import the librairies we need to parce or data.</p>
+<p>First we must import the libraries we need to parse or data.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -13285,14 +13285,14 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>Here we will retrieve the <code>Provisional_Death_Counts_for_Coronavirus_Disease__COVID-19_.csv</code> from our IS362 Final Project Folder, and enter it into a dataframe<code>covid19_deaths</code>. This data most current version is as of 4/30/20.</p>
+<p>Here we will retrieve the <code>Provisional_Death_Counts_for_Coronavirus_Disease__COVID-19_.csv</code> from our IS362 Final Project Folder and enter it into a dataframe<code>covid19_deaths</code>. This data most current version is as of 4/30/20.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">covid19_deaths</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Provisional_Death_Counts_for_Coronavirus_Disease__COVID-19_.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13309,7 +13309,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -14402,14 +14402,14 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>Now that we have our data frame lets take a look at the <code>Group</code> column, as that is how this data seeems to be sorted. We will take a look at the values that exsist with in this column.</p>
+<p>Now that we have our data frame let’s take a look at the <code>Group</code> column, as that is how this data seems to be sorted. We will take a look at the values that exist with in this column.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">covid19_deaths</span><span class="o">.</span><span class="n">Group</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -14425,7 +14425,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -14448,7 +14448,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We see that all the rows are divided amongst 5 distinct groups. So we will divided this dataframe into these groups, in to diffrent variables <code>bystate</code>, <code>byweek</code>, <code>byage</code>, <code>byplaceofdeath</code>, <code>bysex</code>.</p>
+<p>We see that all the rows are divided amongst 5 distinct groups. So, we will divide this dataframe into these groups, into different variables <code>bystate</code>, <code>byweek</code>, <code>byage</code>, <code>byplaceofdeath</code>, <code>bysex</code>.</p>
 
 </div>
 </div>
@@ -14457,14 +14457,14 @@ Name: Group, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>Below we will create the <code>bystate</code> variable that will take all the rows that consist of the Group 'By state'. We then clean this data by taking only the column we need consisting of Covid deaths that is <code>All COVID-19 Deaths (U07.1)</code> and the states those deaths are in being the <code>State columns</code> and we will put this clean data into a ne variable <code>total_covid_deaths_bystate</code>. When reviewing the <code>covid19_deaths</code> variable i saw some <code>NaN</code> values so we need to serch for those aswell.</p>
+<p>Below we will create the <code>bystate</code> variable that will take all the rows that consist of the Group 'By state'. We then clean this data by taking only the column we need consisting of COVID-19 deaths that is <code>All COVID-19 Deaths (U07.1)</code> and the states those deaths are in being the <code>State columns</code> and we will put this clean data into a new variable <code>total_covid_deaths_bystate</code>. When reviewing the <code>covid19_deaths</code> variable I saw some <code>NaN</code> values so we need to search for those as well.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">bystate</span> <span class="o">=</span> <span class="n">covid19_deaths</span><span class="p">[</span><span class="n">covid19_deaths</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;By state&#39;</span><span class="p">]</span>
@@ -14482,7 +14482,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -14561,7 +14561,7 @@ Name: Group, dtype: int64</pre>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">total_covid_deaths_bystate_fillNA</span><span class="o">=</span><span class="n">total_covid_deaths_bystate</span><span class="p">[[</span><span class="s1">&#39;State&#39;</span><span class="p">,</span><span class="s1">&#39;All COVID-19 Deaths (U07.1)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -14575,14 +14575,14 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lets just recheck our work to make sure we no longer have NaN values in the <code>total_covid_deaths_bystate_fillNA</code> variable.</p>
+<p>Let’s re-check our work to make sure we no longer have <code>NaN</code> values in the <code>total_covid_deaths_bystate_fillNA</code> variable.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">total_covid_deaths_bystate_fillNA</span><span class="p">[</span><span class="n">total_covid_deaths_bystate_fillNA</span><span class="p">[</span><span class="s1">&#39;All COVID-19 Deaths (U07.1)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
@@ -14598,7 +14598,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -14640,7 +14640,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Great. As we can see  we were returned and empty result, menaning we no longer have any <code>NaN</code> values in our <code>total_covid_deaths_bystate_fillNA</code>.</p>
+<p>Great. As we can see  we were returned and empty result, meaning we no longer have any <code>NaN</code> values in our <code>total_covid_deaths_bystate_fillNA</code>.</p>
 
 </div>
 </div>
@@ -14657,7 +14657,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Below we will chnage the structor of <code>total_covid_deaths_bystate_fillNA</code>. We will set the index to be the <code>State</code> names.</p>
+<p>Below we will change the structure of <code>total_covid_deaths_bystate_fillNA</code>. We will set the index to be the <code>State</code> names.</p>
 <p>Then we create yet another variable of this data called <code>dropUS</code> that will consist of removing the entry in the data that is the <code>United States</code>, as this is the combined total of all the states COVID-19 deaths in the dataframe.</p>
 <p>After this we will then create a chart to visualize <code>dropUS</code> that will diplay COVID-19 Deaths by each state as of 4/30/20.</p>
 
@@ -14666,7 +14666,7 @@ Name: Group, dtype: int64</pre>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">total_covid_deaths_bystate_fillNA</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -14689,7 +14689,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -14722,7 +14722,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can clearly see New York has far and away more COVID-19 Deaths thank any other state in the US. Only surpassed by the city of New York, that has more than double the COVID-19 Deaths than the rest of the state of New York.</p>
+<p>As we can clearly see, New York has far and away more COVID-19 Deaths than any other state in the U.S. Only surpassed by the city of New York, that has more than double the COVID-19 deaths than the rest of the state of New York.</p>
 
 </div>
 </div>
@@ -14731,18 +14731,18 @@ Name: Group, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="By-Week:">By Week:<a class="anchor-link" href="#By-Week:">&#182;</a></h2><p>Below We will see when these deaths occured by Week and compare them to Deaths from all other causes.</p>
-<p>Here we will Clean the data from <code>covid19_deaths</code> data fram but this time we will be grouping this data by the <code>Group</code> colum that contains the value <code>'By week'</code>.</p>
+<h2 id="By-Week:">By Week:<a class="anchor-link" href="#By-Week:">&#182;</a></h2><p>Below We will see when these deaths occurred by Week and compare them to Deaths from all other causes.</p>
+<p>Here we will Clean the data from <code>covid19_deaths</code> dataframe but this time we will be grouping this data by the <code>Group</code> column that contains the value <code>'By week'</code>.</p>
 <p>We will then clean this data by creating the variable <code>byweekClean</code> that will only consist of the <code>By week</code> data columns <code>'End week'</code>, <code>'All COVID-19 Deaths (U07.1)'</code>, <code>'Deaths from All Causes'</code>.</p>
-<p>We will then further clean the data in the new variable <code>byweekCleaner</code> by removing row <code>0</code> wich consist of the total number of Deaths for all weeks, we just want the deaths per week. Now wee will set the index for this data to be the <code>'End week'</code> date.</p>
-<p>Now we can plot a staked bar chart to show this data visualy.</p>
+<p>We will then further clean the data in the new variable <code>byweekCleaner</code> by removing row <code>0</code> which consist of the total number of Deaths for all weeks, we just want the deaths per week. Now we will set the index for this data to be the <code>'End week'</code> date.</p>
+<p>Now we can plot a staked bar chart to show this data visually.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">byweek</span> <span class="o">=</span> <span class="n">covid19_deaths</span><span class="p">[</span><span class="n">covid19_deaths</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;By week&#39;</span><span class="p">]</span>
@@ -14765,7 +14765,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -14798,8 +14798,8 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see from this chart a significant number of Covid deaths did not begin untill the week ending <code>3/21/20</code>. And the deatlyies week in the US being <code>4/11/20</code>.</p>
-<p>Another distinction we can see is that COVID-19 is directly responasable for the raisied death rate in the US. However, we do see an anomoly of the total death rate in the US dramaticly droping in Week ending <code>4/25/20</code>. This could be posably becuse at this point we have been quarenteening the entire population so deaths from other aspects, like driving accidents etc., have dropped. Becuse every one is at home, less people are outside so deaths that may have occured, did not. We would need more data to confirm this theory. But it is quite intresting development.</p>
+<p>As we can see from this chart a significant number of COVID-19 deaths did not begin until the week ending <code>3/21/20</code>. And the deadliest week in the US being <code>4/11/20</code>.</p>
+<p>Another distinction we can see is that COVID-19 is directly responsible for the raised death rate in the US. However, we do see an anomaly of the total death rate in the US dramatically dropping in Week ending <code>4/25/20</code>. This could be possibly because at this point, we have been quarantining the entire population so deaths from other aspects, like driving accidents etc., have dropped. Because everyone is at home, less people are outside so deaths that may have occurred, did not. We would need more data to confirm this theory. But it is quite interesting development.</p>
 
 </div>
 </div>
@@ -14811,15 +14811,15 @@ Name: Group, dtype: int64</pre>
 <h2 id="By-Age:">By Age:<a class="anchor-link" href="#By-Age:">&#182;</a></h2><p>Below We will see the death rate <code>By age</code> and compare them.</p>
 <p>Here we will Clean the data from <code>covid19_deaths</code> dataframe but this time we will be grouping this data by the <code>Group</code> column that contains the value <code>'By age'</code> in the new variable <code>byage</code>.</p>
 <p>We will then clean this <code>byage</code> data by creating the variable <code>byageClean</code> that will only consist of the <code>By age</code> data columns <code>'Indicator'</code>, <code>'All COVID-19 Deaths (U07.1)'</code>.</p>
-<p>We will then further clean the data in the new variable <code>byageCleaner</code> by removing row <code>14</code> wich consist of the total number of Deaths for all ages, we just want the deaths by each age grouping. Now wee will set the index for this data to be the <code>'Indicator'</code> column.</p>
-<p>Now we can plot a bar chart to show this data visualy.</p>
+<p>We will then further clean the data in the new variable <code>byageCleaner</code> by removing row <code>14</code> which consist of the total number of Deaths for all ages, we just want the deaths by each age grouping. Now we will set the index for this data to be the <code>'Indicator'</code> column.</p>
+<p>Now we can plot a bar chart to show this data visually.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">byage</span><span class="o">=</span> <span class="n">covid19_deaths</span><span class="p">[</span><span class="n">covid19_deaths</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;By age&#39;</span><span class="p">]</span>
@@ -14842,7 +14842,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -14875,7 +14875,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see from the chart age directly corrolates to the number of COVID-19 deaths as the age groups get older. This proves that those people abouve the age of 55 have the most serious risk of death should they contract COVID-19. This group should follow more stirngent quarentine mesures and isolate more. Especially if located in New York State.</p>
+<p>As we can see from the chart age directly correlates to the number of COVID-19 deaths as the age groups get older. This proves that those people above the age of 55 have the most serious risk of death should they contract COVID-19. This group should follow more stringent quarantine measures and isolate more. Especially if located in New York State.</p>
 
 </div>
 </div>
@@ -14887,15 +14887,15 @@ Name: Group, dtype: int64</pre>
 <h2 id="By-Place-of-Death:">By Place of Death:<a class="anchor-link" href="#By-Place-of-Death:">&#182;</a></h2><p>Below We will see the death rate <code>By place of death</code> and compare them.</p>
 <p>Here we will Clean the data from <code>covid19_deaths</code> dataframe but this time we will be grouping this data by the <code>Group</code> column that contains the value <code>'By place of death'</code> in the new variable <code>byplaceofdeath</code>.</p>
 <p>We will then clean this <code>byplaceofdeath</code> data by creating the variable <code>byplaceofdeathClean</code> that will only consist of the <code>By place of death</code> data columns <code>'Indicator'</code>, <code>'All COVID-19 Deaths (U07.1)'</code>.</p>
-<p>We will then further clean the data in the new variable <code>byplaceofdeathCleaner</code> by removing row <code>Total</code> wich consist of the total number of Deaths for all places, we just want the deaths by each location grouping. Now wee will set the index for this data to be the <code>'Indicator'</code> column.</p>
-<p>Now we can plot a bar chart to show this data visualy.</p>
+<p>We will then further clean the data in the new variable <code>byplaceofdeathCleaner</code> by removing row <code>Total</code> which consist of the total number of Deaths for all places, we just want the deaths by each location grouping. Now we will set the index for this data to be the <code>'Indicator'</code> column.</p>
+<p>Now we can plot a bar chart to show this data visually.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">byplaceofdeath</span> <span class="o">=</span> <span class="n">covid19_deaths</span><span class="p">[</span><span class="n">covid19_deaths</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;By place of death&#39;</span><span class="p">]</span>
@@ -14918,7 +14918,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -14951,7 +14951,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What this shows us, is the grim reality, that if you are a patient that is admited to a hospitale due to a severe COVID-19 diagnosis, you are more than 4 to 5 times likley to die in the hospatal, than any where else.</p>
+<p>What this shows us, is the grim reality, that if you are a patient that is admitted to a hospital due to a severe COVID-19 diagnosis, you are more than 4 to 5 times likely to die in the hospital, than anywhere else.</p>
 
 </div>
 </div>
@@ -14963,15 +14963,15 @@ Name: Group, dtype: int64</pre>
 <h2 id="By-Sex:">By Sex:<a class="anchor-link" href="#By-Sex:">&#182;</a></h2><p>Below We will see the death rate <code>By sex</code> and compare them.</p>
 <p>Here we will Clean the data from <code>covid19_deaths</code> dataframe but this time we will be grouping this data by the <code>Group</code> column that contains the value <code>'By sex'</code> in the new variable <code>bysex</code>.</p>
 <p>We will then clean this <code>bysex</code> data by creating the variable <code>bysexClean</code> that will only consist of the <code>By sex</code> data columns <code>'Indicator'</code>, <code>'All COVID-19 Deaths (U07.1)'</code>.</p>
-<p>We will then further clean the data in the new variable <code>bysexCleaner</code> by removing row <code>Total deaths</code> wich consist of the total number of Deaths for all sexes, we just want the deaths by each sex grouping. Now wee will set the index for this data to be the <code>'Indicator'</code> column.</p>
-<p>Now we can plot a bar chart to show this data visualy.</p>
+<p>We will then further clean the data in the new variable <code>bysexCleaner</code> by removing row <code>Total deaths</code> which consist of the total number of Deaths for all sexes, we just want the deaths by each sex grouping. Now we will set the index for this data to be the <code>'Indicator'</code> column.</p>
+<p>Now we can plot a bar chart to show this data visually.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">bysex</span> <span class="o">=</span> <span class="n">covid19_deaths</span><span class="p">[</span><span class="n">covid19_deaths</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;By sex&#39;</span><span class="p">]</span>
@@ -14994,7 +14994,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -15027,7 +15027,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This suprizingly shows us that men are about 20-25% more likley to die from a COVID-19 related illness then there female counterpart.</p>
+<p>This surprisingly shows us that men are about 20-25% more likely to die from a COVID-19 related illness then their female counterpart.</p>
 
 </div>
 </div>
@@ -15037,7 +15037,7 @@ Name: Group, dtype: int64</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="New-York-State-Infections-by-County:">New York State Infections by County:<a class="anchor-link" href="#New-York-State-Infections-by-County:">&#182;</a></h2><p><img src="https://www.northcountrypublicradio.org/news/images/4011d98a86_CuomoFlickr050920.jpg" alt="Cuomo Follow the data"></p>
-<p>Since it seems that New York State is the epicenter of the outbreak, i thought it might be a good idea to see exsacly where , by County, that the outbreak is occuring in its highest numbers. This data was retrieved from the NY.Gov web site API @ <code>https://health.data.ny.gov/resource/xdss-u53e.csv</code>. It refrences the Number of Covid-19 Test done and confirmed Positive cases according to those test.</p>
+<p>Since it seems that New York State is the epicenter of the outbreak, i thought it might be a good idea to see exactly where, by County, that the outbreak is occurring in its highest numbers. This data was retrieved from the NY.Gov web site API @ <code>https://health.data.ny.gov/resource/xdss-u53e.csv</code>. It references the Number of Covid-19 Test done and confirmed Positive cases according to those tests.</p>
 
 </div>
 </div>
@@ -15053,7 +15053,7 @@ Name: Group, dtype: int64</pre>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">NYStateCovidTest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://health.data.ny.gov/resource/xdss-u53e.csv&#39;</span><span class="p">)</span>
@@ -15070,7 +15070,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -15104,273 +15104,273 @@ Name: Group, dtype: int64</pre>
   <tbody>
     <tr>
       <th>0</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Albany</td>
       <td>15</td>
-      <td>1494</td>
-      <td>335</td>
-      <td>15246</td>
+      <td>1509</td>
+      <td>546</td>
+      <td>15792</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Allegany</td>
-      <td>2</td>
+      <td>0</td>
       <td>44</td>
-      <td>39</td>
-      <td>885</td>
+      <td>53</td>
+      <td>938</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Bronx</td>
-      <td>236</td>
-      <td>41677</td>
-      <td>2678</td>
-      <td>124133</td>
+      <td>303</td>
+      <td>41980</td>
+      <td>3338</td>
+      <td>127471</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Broome</td>
-      <td>3</td>
-      <td>382</td>
-      <td>291</td>
-      <td>5803</td>
+      <td>1</td>
+      <td>383</td>
+      <td>343</td>
+      <td>6146</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Cattaraugus</td>
-      <td>0</td>
-      <td>61</td>
-      <td>77</td>
-      <td>1574</td>
+      <td>3</td>
+      <td>64</td>
+      <td>134</td>
+      <td>1708</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Cayuga</td>
       <td>0</td>
       <td>60</td>
-      <td>45</td>
-      <td>1312</td>
+      <td>104</td>
+      <td>1416</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Chautauqua</td>
       <td>1</td>
-      <td>43</td>
+      <td>44</td>
       <td>125</td>
-      <td>1916</td>
+      <td>2041</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Chemung</td>
-      <td>1</td>
+      <td>0</td>
       <td>132</td>
-      <td>282</td>
-      <td>3112</td>
+      <td>312</td>
+      <td>3424</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Chenango</td>
       <td>0</td>
       <td>112</td>
-      <td>83</td>
-      <td>1713</td>
+      <td>41</td>
+      <td>1754</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Clinton</td>
-      <td>1</td>
-      <td>78</td>
-      <td>53</td>
-      <td>1235</td>
+      <td>3</td>
+      <td>81</td>
+      <td>123</td>
+      <td>1358</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Columbia</td>
-      <td>4</td>
-      <td>318</td>
-      <td>85</td>
-      <td>2392</td>
+      <td>9</td>
+      <td>327</td>
+      <td>100</td>
+      <td>2492</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Cortland</td>
-      <td>1</td>
-      <td>31</td>
-      <td>40</td>
-      <td>1566</td>
+      <td>2</td>
+      <td>33</td>
+      <td>50</td>
+      <td>1616</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Delaware</td>
       <td>1</td>
-      <td>66</td>
-      <td>53</td>
-      <td>1164</td>
+      <td>67</td>
+      <td>136</td>
+      <td>1300</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Dutchess</td>
-      <td>30</td>
-      <td>3429</td>
-      <td>387</td>
-      <td>19915</td>
+      <td>45</td>
+      <td>3474</td>
+      <td>459</td>
+      <td>20374</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Erie</td>
-      <td>76</td>
-      <td>4606</td>
-      <td>1591</td>
-      <td>29028</td>
+      <td>65</td>
+      <td>4671</td>
+      <td>1664</td>
+      <td>30692</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Essex</td>
       <td>0</td>
       <td>32</td>
-      <td>77</td>
-      <td>877</td>
+      <td>60</td>
+      <td>937</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Franklin</td>
       <td>0</td>
       <td>17</td>
-      <td>52</td>
-      <td>819</td>
+      <td>56</td>
+      <td>875</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Fulton</td>
-      <td>5</td>
-      <td>140</td>
-      <td>61</td>
-      <td>1374</td>
+      <td>4</td>
+      <td>144</td>
+      <td>81</td>
+      <td>1455</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Genesee</td>
-      <td>0</td>
-      <td>174</td>
-      <td>96</td>
-      <td>1980</td>
+      <td>1</td>
+      <td>175</td>
+      <td>77</td>
+      <td>2057</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Greene</td>
-      <td>0</td>
-      <td>206</td>
-      <td>41</td>
-      <td>1654</td>
+      <td>1</td>
+      <td>207</td>
+      <td>46</td>
+      <td>1700</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Hamilton</td>
       <td>0</td>
       <td>5</td>
-      <td>6</td>
-      <td>67</td>
+      <td>45</td>
+      <td>112</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Herkimer</td>
-      <td>3</td>
-      <td>84</td>
-      <td>61</td>
-      <td>1379</td>
+      <td>2</td>
+      <td>86</td>
+      <td>54</td>
+      <td>1433</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Jefferson</td>
-      <td>0</td>
-      <td>68</td>
-      <td>80</td>
-      <td>2268</td>
+      <td>1</td>
+      <td>69</td>
+      <td>104</td>
+      <td>2372</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Kings</td>
-      <td>336</td>
-      <td>50667</td>
-      <td>4615</td>
-      <td>162163</td>
+      <td>428</td>
+      <td>51095</td>
+      <td>6107</td>
+      <td>168270</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Lewis</td>
-      <td>0</td>
-      <td>11</td>
-      <td>10</td>
-      <td>666</td>
+      <td>1</td>
+      <td>12</td>
+      <td>31</td>
+      <td>697</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Livingston</td>
-      <td>1</td>
-      <td>103</td>
-      <td>197</td>
-      <td>1980</td>
+      <td>3</td>
+      <td>106</td>
+      <td>113</td>
+      <td>2093</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Madison</td>
       <td>2</td>
-      <td>253</td>
-      <td>79</td>
-      <td>2227</td>
+      <td>255</td>
+      <td>61</td>
+      <td>2288</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Monroe</td>
-      <td>69</td>
-      <td>1959</td>
-      <td>1423</td>
-      <td>25638</td>
+      <td>60</td>
+      <td>2019</td>
+      <td>1401</td>
+      <td>27039</td>
     </tr>
     <tr>
       <th>28</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Montgomery</td>
       <td>1</td>
-      <td>68</td>
-      <td>115</td>
-      <td>1246</td>
+      <td>69</td>
+      <td>177</td>
+      <td>1423</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>2020-05-12T00:00:00.000</td>
+      <td>2020-05-13T00:00:00.000</td>
       <td>Nassau</td>
-      <td>153</td>
-      <td>38587</td>
-      <td>2374</td>
-      <td>122255</td>
+      <td>156</td>
+      <td>38743</td>
+      <td>2633</td>
+      <td>124888</td>
     </tr>
     <tr>
       <th>...</th>
@@ -15383,273 +15383,273 @@ Name: Group, dtype: int64</pre>
     </tr>
     <tr>
       <th>970</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Queens</td>
-      <td>530</td>
-      <td>49929</td>
-      <td>2628</td>
-      <td>112427</td>
+      <td>812</td>
+      <td>50741</td>
+      <td>4061</td>
+      <td>116488</td>
     </tr>
     <tr>
       <th>971</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Rensselaer</td>
-      <td>4</td>
-      <td>250</td>
-      <td>39</td>
-      <td>3075</td>
+      <td>12</td>
+      <td>262</td>
+      <td>91</td>
+      <td>3166</td>
     </tr>
     <tr>
       <th>972</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Richmond</td>
-      <td>93</td>
-      <td>11516</td>
-      <td>567</td>
-      <td>31710</td>
+      <td>144</td>
+      <td>11660</td>
+      <td>935</td>
+      <td>32645</td>
     </tr>
     <tr>
       <th>973</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Rockland</td>
-      <td>87</td>
-      <td>11453</td>
-      <td>537</td>
-      <td>29374</td>
+      <td>133</td>
+      <td>11586</td>
+      <td>528</td>
+      <td>29902</td>
     </tr>
     <tr>
       <th>974</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Saratoga</td>
-      <td>7</td>
-      <td>343</td>
-      <td>116</td>
-      <td>4719</td>
+      <td>3</td>
+      <td>346</td>
+      <td>125</td>
+      <td>4844</td>
     </tr>
     <tr>
       <th>975</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Schenectady</td>
-      <td>12</td>
-      <td>469</td>
-      <td>119</td>
-      <td>3744</td>
+      <td>10</td>
+      <td>479</td>
+      <td>184</td>
+      <td>3928</td>
     </tr>
     <tr>
       <th>976</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Schoharie</td>
-      <td>3</td>
-      <td>38</td>
-      <td>19</td>
-      <td>571</td>
+      <td>1</td>
+      <td>39</td>
+      <td>21</td>
+      <td>592</td>
     </tr>
     <tr>
       <th>977</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Schuyler</td>
       <td>0</td>
       <td>7</td>
-      <td>8</td>
-      <td>390</td>
+      <td>15</td>
+      <td>405</td>
     </tr>
     <tr>
       <th>978</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Seneca</td>
       <td>0</td>
       <td>38</td>
-      <td>9</td>
-      <td>438</td>
+      <td>13</td>
+      <td>451</td>
     </tr>
     <tr>
       <th>979</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Steuben</td>
-      <td>1</td>
-      <td>210</td>
-      <td>58</td>
-      <td>1869</td>
+      <td>4</td>
+      <td>214</td>
+      <td>105</td>
+      <td>1974</td>
     </tr>
     <tr>
       <th>980</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>St. Lawrence</td>
-      <td>1</td>
+      <td>0</td>
       <td>170</td>
-      <td>19</td>
-      <td>1465</td>
+      <td>84</td>
+      <td>1549</td>
     </tr>
     <tr>
       <th>981</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Suffolk</td>
-      <td>254</td>
-      <td>32724</td>
-      <td>1429</td>
-      <td>86499</td>
+      <td>541</td>
+      <td>33265</td>
+      <td>2669</td>
+      <td>89168</td>
     </tr>
     <tr>
       <th>982</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Sullivan</td>
-      <td>21</td>
-      <td>769</td>
-      <td>77</td>
-      <td>3527</td>
+      <td>42</td>
+      <td>811</td>
+      <td>114</td>
+      <td>3641</td>
     </tr>
     <tr>
       <th>983</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Tioga</td>
-      <td>11</td>
-      <td>82</td>
-      <td>86</td>
-      <td>747</td>
+      <td>2</td>
+      <td>84</td>
+      <td>68</td>
+      <td>815</td>
     </tr>
     <tr>
       <th>984</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Tompkins</td>
-      <td>0</td>
-      <td>126</td>
-      <td>13</td>
-      <td>3373</td>
+      <td>1</td>
+      <td>127</td>
+      <td>119</td>
+      <td>3492</td>
     </tr>
     <tr>
       <th>985</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Ulster</td>
-      <td>11</td>
-      <td>1230</td>
-      <td>94</td>
-      <td>7438</td>
+      <td>22</td>
+      <td>1252</td>
+      <td>335</td>
+      <td>7773</td>
     </tr>
     <tr>
       <th>986</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Warren</td>
-      <td>3</td>
-      <td>150</td>
-      <td>25</td>
-      <td>1256</td>
+      <td>2</td>
+      <td>152</td>
+      <td>12</td>
+      <td>1268</td>
     </tr>
     <tr>
       <th>987</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Washington</td>
-      <td>1</td>
-      <td>131</td>
-      <td>13</td>
-      <td>928</td>
+      <td>3</td>
+      <td>134</td>
+      <td>19</td>
+      <td>947</td>
     </tr>
     <tr>
       <th>988</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Wayne</td>
-      <td>1</td>
+      <td>0</td>
       <td>70</td>
-      <td>53</td>
-      <td>1140</td>
+      <td>45</td>
+      <td>1185</td>
     </tr>
     <tr>
       <th>989</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Westchester</td>
-      <td>238</td>
-      <td>28245</td>
-      <td>1408</td>
-      <td>89144</td>
+      <td>381</td>
+      <td>28626</td>
+      <td>1843</td>
+      <td>90987</td>
     </tr>
     <tr>
       <th>990</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Wyoming</td>
-      <td>0</td>
-      <td>63</td>
-      <td>9</td>
-      <td>525</td>
+      <td>2</td>
+      <td>65</td>
+      <td>26</td>
+      <td>551</td>
     </tr>
     <tr>
       <th>991</th>
-      <td>2020-04-27T00:00:00.000</td>
+      <td>2020-04-28T00:00:00.000</td>
       <td>Yates</td>
       <td>0</td>
       <td>17</td>
-      <td>3</td>
-      <td>244</td>
+      <td>8</td>
+      <td>252</td>
     </tr>
     <tr>
       <th>992</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Albany</td>
-      <td>31</td>
-      <td>979</td>
-      <td>263</td>
-      <td>9323</td>
+      <td>30</td>
+      <td>1009</td>
+      <td>197</td>
+      <td>9520</td>
     </tr>
     <tr>
       <th>993</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Allegany</td>
       <td>0</td>
       <td>35</td>
-      <td>9</td>
-      <td>485</td>
+      <td>14</td>
+      <td>499</td>
     </tr>
     <tr>
       <th>994</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Bronx</td>
-      <td>586</td>
-      <td>35556</td>
-      <td>2363</td>
-      <td>82209</td>
+      <td>438</td>
+      <td>35994</td>
+      <td>2107</td>
+      <td>84316</td>
     </tr>
     <tr>
       <th>995</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Broome</td>
-      <td>4</td>
-      <td>261</td>
-      <td>69</td>
-      <td>2100</td>
+      <td>5</td>
+      <td>266</td>
+      <td>60</td>
+      <td>2160</td>
     </tr>
     <tr>
       <th>996</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Cattaraugus</td>
       <td>0</td>
       <td>45</td>
-      <td>21</td>
-      <td>733</td>
+      <td>15</td>
+      <td>748</td>
     </tr>
     <tr>
       <th>997</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Cayuga</td>
-      <td>1</td>
+      <td>0</td>
       <td>48</td>
       <td>20</td>
-      <td>878</td>
+      <td>898</td>
     </tr>
     <tr>
       <th>998</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Chautauqua</td>
-      <td>1</td>
+      <td>0</td>
       <td>30</td>
-      <td>101</td>
-      <td>1031</td>
+      <td>26</td>
+      <td>1057</td>
     </tr>
     <tr>
       <th>999</th>
-      <td>2020-04-26T00:00:00.000</td>
+      <td>2020-04-27T00:00:00.000</td>
       <td>Chemung</td>
-      <td>2</td>
-      <td>108</td>
-      <td>20</td>
-      <td>1319</td>
+      <td>5</td>
+      <td>113</td>
+      <td>64</td>
+      <td>1383</td>
     </tr>
   </tbody>
 </table>
@@ -15666,7 +15666,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since this data consist of each county in NYS, and those cases as of a particular date in the <code>test_date</code> column, we will need to retrive only the data that has acumulated as of <code>4/30/20</code>. Seeing as this data goes far beyond that date to <code>5/12/20</code>, we will need to modify the <code>test_date</code> column to a <code>datetime</code> object so we can serch for what we need easier.</p>
+<p>Since this data consist of each county in NYS, and those cases as of a particular date in the <code>test_date</code> column, we will need to retrieve only the data that has accumulated as of <code>4/30/20</code>. Seeing as this data goes far beyond that date to <code>5/12/20</code>, we will need to modify the <code>test_date</code> column to a <code>datetime</code> object so we can search for what we need easier.</p>
 
 </div>
 </div>
@@ -15675,14 +15675,14 @@ Name: Group, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>Lets change <code>test_date</code> to datetime object.</p>
+<p>Lets change <code>test_date</code> to a datetime object.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">NYStateCovidTest</span><span class="p">[</span><span class="s1">&#39;test_date&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">NYStateCovidTest</span><span class="p">[</span><span class="s1">&#39;test_date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%y&quot;</span><span class="p">)</span>
@@ -15704,7 +15704,7 @@ Name: Group, dtype: int64</pre>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">NYStateCovidTestClean</span><span class="o">=</span> <span class="n">NYStateCovidTest</span><span class="p">[[</span><span class="s1">&#39;test_date&#39;</span><span class="p">,</span><span class="s1">&#39;county&#39;</span><span class="p">,</span><span class="s1">&#39;cumulative_number_of_positives&#39;</span><span class="p">]]</span>
@@ -15726,7 +15726,7 @@ Name: Group, dtype: int64</pre>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">NYStateCovidTestClean</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;test_date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -15741,14 +15741,14 @@ Name: Group, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>Now we can select a prticular <code>test_date</code> to match our other data set that only goes to <code>4/30/20</code></p>
+<p>Now we can select a prticular <code>test_date</code> to match our other dataset, that only goes to <code>4/30/20</code></p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">NYStateCovidTestClean_4_30_20</span> <span class="o">=</span> <span class="n">NYStateCovidTestClean</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;04/30/20&#39;</span><span class="p">]</span>
@@ -15763,14 +15763,14 @@ Name: Group, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p>Now that we have only the totals from each county as of 4/30/20, we can rid our selves of the <code>test_date</code> index and use the counties as our new index, in our variable <code>graf</code> that will be used to graf our chart of infections by County.</p>
+<p>Now that we have only the totals from each county as of 4/30/20, we can rid ourselves of the <code>test_date</code> index and use the counties as our new index, in our variable <code>graf</code> that will be used to graf our chart of infections by County.</p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">graf</span> <span class="o">=</span> <span class="n">NYStateCovidTestClean_4_30_20</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
@@ -15790,7 +15790,7 @@ Name: Group, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -15823,7 +15823,7 @@ Name: Group, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This chart shows us that NYC (consisting of Queens, New York, Bronx and Kings Counties), Long Island(consisting of Nassua and Suffolk Counties), and Westchester County are the most sever hit counties in New York state with confirmed COVID-19 test results. With all of thies counties the closest proximity to Manahattan where many of the people who live in thies areas commut to work, it is sad to say the relative distance that you work, or live, in relation to the Borogh of Manahattan, the greater at risk you are to catching COVID-19, With Queens having the highest infection rate.</p>
+<p>This chart shows us that NYC (consisting of Queens, New York, Bronx and Kings Counties), Long Island (consisting of Nassau and Suffolk Counties), and Westchester County are the most sever hit counties in New York state with confirmed COVID-19 test results. With all of these counties the closest proximity to Manhattan where many of the people who live in this area commute to work, it is sad to say the relative distance that you work, or live, in relation to the Borough of Manhattan, the greater at risk you are to catching COVID-19, With Queens having the highest infection rate.</p>
 
 </div>
 </div>
@@ -15832,9 +15832,9 @@ Name: Group, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:">&#182;</a></h2><p>As for what my project conclusion can difinitivly say is, if you are In the United States, in New York state, more specificly New York City, in the county of Queens, and are a  Male over the Age of 55, and are admitted to a hostpital as an inpatient with a COVID-19 infection, the mortality rate is quite Hight.</p>
-<p>More generaly Those Who are Older 60+ yers old are highly suseptable to death from COVID-19, Males more so than Females. Additionaly, Regions that surround the Island of Manhhattan, that most people commute to for work daily, have been the most greatly effected, and remains the Countries epicenter of the infection within the US that has an exponential amount more infections than any where in the US.</p>
-<p>So while the correlations I am able to decifer from this data is not ground breaking in any way, especially if your watchign the news on an endless loop, you are already aware of these facts. However, the reson we are able to be aware of the effects of COVID-19, where the out break is occurring, and who is the most suseptable to death from it, are because of data scientest hard at work gathering all this data, cleaning it, and presenting it for State and local goverment officials to reach conclusions on just where, how, and who, the virus is attacking in real time, and to implment rapidly a defencive stratigie in slowing the spread of the Coronavirus.</p>
+<h2 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:">&#182;</a></h2><p>As for what my project conclusion can definitively say is, if you are In the United States, in New York state, more specifically New York City, in the county of Queens, and are a  Male over the Age of 55, and are admitted to a hospital as an inpatient with a COVID-19 infection, the mortality rate is quite Hight.</p>
+<p>More generally, those Who are Older 60+ years old are highly susceptible to death from COVID-19, Males more so than Females. Additionally, Regions that surround the Island of Manhattan, that most people commute to for work daily, have been the most greatly affected, and remains the Countries epicenter of the infection within the US that has an exponential amount more infections than anywhere in the US.</p>
+<p>So, while the correlations I am able to decipher from this data is not groundbreaking in any way, especially if your watching the news on an endless loop, you are already aware of these facts. However, the reason we are able to be aware of the effects of COVID-19, where the outbreak is occurring, and who is the most susceptible to death from it, are because of data scientist hard at work gathering all this data, cleaning it, and presenting it for State and local government officials to reach conclusions on just where, how, and who, the virus is attacking in real time, and to implement rapidly a defensive strategies in slowing the spread of the Coronavirus.</p>
 
 </div>
 </div>
